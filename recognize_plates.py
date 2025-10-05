@@ -6,7 +6,7 @@ import re
 import numpy as np
 
 # Load models
-detector = YOLO("runs/detect/train4/weights/best.pt")  # your trained YOLO model
+detector = YOLO("runs/detect/train/weights/best.pt")  # your trained YOLO model
 reader = easyocr.Reader(['en'], gpu=False)  # set gpu=True if you have CUDA
 
 # --- Helper functions ---
@@ -74,9 +74,10 @@ def detect_and_read(image_path, conf_thresh=0.3):
 # --- Run example ---
 
 if __name__ == "__main__":
-    image_path = "test_images/test_image.jpg"  # replace with your image path
+    image_path = "test_image.jpg"  # replace with your image path
     results = detect_and_read(image_path)
 
     print("✅ Detected license plates:")
     for plate in results:
         print(f"{plate['text']} at {plate['bbox']}")
+
