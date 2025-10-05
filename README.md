@@ -1,0 +1,1 @@
+# Open-License-Plate-Recognition-OLPR-using-OpenCV-and-YOLOv8-in-Python
